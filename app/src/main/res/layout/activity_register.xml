@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1"
+    tools:context=".Register">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter your Credentials"
+        android:textAlignment="center"
+        android:layout_marginTop="90dp"
+        android:textSize="25dp"
+        android:id="@+id/details"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/register_username_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="60dp"
+        android:layout_below="@id/details"
+        android:hint="Name"
+        android:inputType="text"
+        android:textSize="19sp"
+        />
+
+    <EditText
+        android:id="@+id/register_phone_number_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_username_input"
+        android:padding="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:hint="Phone Number"
+        android:inputType="number"
+        android:textSize="19sp"
+        android:layout_marginTop="6dp"
+        />
+
+
+    <EditText
+        android:id="@+id/register_password_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_phone_number_input"
+        android:padding="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="6dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textSize="19sp"
+        />
+
+
+    <Button
+        android:id="@+id/register_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_password_input"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:padding="17dp"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:text="Create Account"
+        android:textColor="@android:color/white"
+        />
+    <TextView
+        android:id="@+id/TVLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:text="Already a member? Login here"
+        android:textAlignment="center"
+        android:layout_below="@id/register_btn"
+        tools:layout_editor_absoluteX="121dp"
+        tools:layout_editor_absoluteY="513dp" />
+
+</RelativeLayout>
