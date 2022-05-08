@@ -13,11 +13,11 @@
         android:layout_height="wrap_content"
         android:background="@color/black">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:id="@+id/imgivparking"
-            android:scaleType="centerCrop"/>
+<!--        <ImageView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="200dp"-->
+<!--            android:id="@+id/imgivparking"-->
+<!--            android:scaleType="centerCrop"/>-->
 
         <TextView
             android:id="@+id/placenam"
@@ -26,7 +26,6 @@
             android:text="Parking"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:layout_below="@id/imgivparking"
             android:layout_margin="3dp"
             android:padding="4dp"
             android:textSize="15sp"/>
