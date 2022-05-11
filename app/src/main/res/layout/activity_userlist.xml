@@ -8,9 +8,22 @@
     android:background="@color/yellow"
     tools:context=".userlist">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/uselist"
+        android:text="Booking list"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:layout_marginTop="25dp"
+        android:textStyle="bold"
+        android:textSize="25dp"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/uList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@+id/uselist"
+        android:layout_marginTop="42dp"/>
 
 </RelativeLayout>

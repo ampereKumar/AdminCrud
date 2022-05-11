@@ -36,10 +36,10 @@ public class userlistadapter extends RecyclerView.Adapter<userlistadapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull userlistadapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         userModel userModel =userModelArrayList.get(position);
-        holder.location.setText(userModel.getLocation());
-        holder.Name.setText(userModel.getName());
-        holder.contact.setText(userModel.getContact());
-        holder.vno.setText(userModel.getVnumber());
+        holder.location.setText("Location: "+userModel.getLocation());
+        holder.Name.setText("Name: "+userModel.getName());
+        holder.contact.setText("Contact: "+userModel.getContact());
+        holder.vno.setText("Vehicle no: "+userModel.getVnumber());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

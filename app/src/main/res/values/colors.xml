@@ -10,4 +10,6 @@
     <color name="yellow">#F3E54F</color>
     <color name="light_orange">#FD8B28</color>
     <color name="dark_orange">#FFBF23</color>
+    <color name="grey">#8B9997</color>
+    <color name="transparent">#800080</color>
 </resources>
