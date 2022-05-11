@@ -29,7 +29,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements parkinglistadapter.parkingclickinterface{
 
     private RecyclerView lists;
-    private FloatingActionButton addFab, user;
+    private FloatingActionButton addFab, user, plist;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private ArrayList<parkingModel> parkingModelArrayList;
@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements parkinglistadapte
         lists = findViewById(R.id.List);
         addFab= findViewById(R.id.addFab);
         user = findViewById(R.id.ulist);
+        plist = findViewById(R.id.privlist);
         firebaseDatabase= firebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Locations");
         parkingModelArrayList = new ArrayList<>();
@@ -60,6 +61,13 @@ public class MainActivity extends AppCompatActivity implements parkinglistadapte
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,userlist.class));
+            }
+        });
+
+        plist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, privacylist.class));
             }
         });
 
