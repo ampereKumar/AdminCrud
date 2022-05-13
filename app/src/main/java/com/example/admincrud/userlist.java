@@ -33,7 +33,7 @@ public class userlist extends AppCompatActivity implements userlistadapter.UserC
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private ArrayList<userModel> userModelArrayList;
-    private RelativeLayout bottomsheetRL;
+    private RelativeLayout bottomsheetuRL;
     private userlistadapter userlistadapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,7 @@ public class userlist extends AppCompatActivity implements userlistadapter.UserC
         firebaseDatabase= firebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("User");
         userModelArrayList = new ArrayList<>();
-        bottomsheetRL = findViewById(R.id.userbottomsheet);
+        bottomsheetuRL = findViewById(R.id.userbottomsheet);
         userlistadapter = new userlistadapter(userModelArrayList, this,this);
         lists.setLayoutManager(new LinearLayoutManager(this));
         lists.setAdapter(userlistadapter);
@@ -85,11 +85,11 @@ public class userlist extends AppCompatActivity implements userlistadapter.UserC
 
     @Override
     public void onUserClick(int postion) {
-
+        displayBottomSheet(userModelArrayList.get(postion));
     }
     private void displayBottomSheet(userModel userModel) {
         final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
-        View layout = LayoutInflater.from(this).inflate(R.layout.bottomsheet_user_dialog,bottomsheetRL);
+        View layout = LayoutInflater.from(this).inflate(R.layout.bottomsheet_user_dialog,bottomsheetuRL);
         bottomSheetDialog.setContentView(layout);
         bottomSheetDialog.setCancelable(false);
         bottomSheetDialog.setCanceledOnTouchOutside(true);
@@ -98,20 +98,20 @@ public class userlist extends AppCompatActivity implements userlistadapter.UserC
         TextView name = layout.findViewById(R.id.list_name);
         TextView contact = layout.findViewById(R.id.list_contact);
         Button del = layout.findViewById(R.id.userdelete);
-        name.setText(userModel.getName());
-        contact.setText(userModel.getContact());
+        name.setText("Name: "+userModel.getName());
+        contact.setText("Contact: "+userModel.getContact());
 
-        del.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                deleteuser();
-            }
-        });
+//        del.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                deleteuser();
+//            }
+//        });
     }
 
     private void deleteuser() {
         databaseReference.removeValue();
         Toast.makeText(this, "User is removed", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(userlist.this,userlist.class));
+        startActivity(new Intent(userlist.this,MainActivity.class));
     }
 }

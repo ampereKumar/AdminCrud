@@ -40,6 +40,9 @@ public class userlistadapter extends RecyclerView.Adapter<userlistadapter.ViewHo
         holder.Name.setText("Name: "+userModel.getName());
         holder.contact.setText("Contact: "+userModel.getContact());
         holder.vno.setText("Vehicle no: "+userModel.getVnumber());
+        holder.date.setText("Booking date: "+userModel.getDate());
+        holder.intime.setText("In time: "+userModel.getInTime());
+        holder.outtime.setText("Out time: "+userModel.getOutTime());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,13 +58,17 @@ public class userlistadapter extends RecyclerView.Adapter<userlistadapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView location, Name, contact, vno;
+        private TextView location, Name, contact, vno, date, intime, outtime;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             location = itemView.findViewById(R.id.uslocation);
             Name = itemView.findViewById(R.id.usname);
             contact = itemView.findViewById(R.id.uscontact);
             vno = itemView.findViewById(R.id.usvehicle);
+            date = itemView.findViewById(R.id.usdate);
+            intime = itemView.findViewById(R.id.usintime);
+            outtime = itemView.findViewById(R.id.usouttime);
+
         }
     }
 

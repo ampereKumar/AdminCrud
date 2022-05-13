@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/uselist"
-        android:text="Booking list"
+        android:text="Parking lot details"
         android:textColor="@color/white"
         android:textAlignment="center"
         android:layout_marginTop="25dp"
