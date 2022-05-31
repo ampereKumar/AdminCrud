@@ -10,11 +10,14 @@ import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -41,8 +44,8 @@ public class MainActivity extends AppCompatActivity implements parkinglistadapte
         setContentView(R.layout.activity_main);
         lists = findViewById(R.id.List);
         addFab= findViewById(R.id.addFab);
-        user = findViewById(R.id.ulist);
-        plist = findViewById(R.id.privlist);
+//        user = findViewById(R.id.ulist);
+//        plist = findViewById(R.id.privlist);
         firebaseDatabase= firebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Locations");
         parkingModelArrayList = new ArrayList<>();
@@ -57,19 +60,19 @@ public class MainActivity extends AppCompatActivity implements parkinglistadapte
             }
         });
 
-        user.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,userlist.class));
-            }
-        });
-
-        plist.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, privacylist.class));
-            }
-        });
+//        user.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(MainActivity.this,userlist.class));
+//            }
+//        });
+//
+//        plist.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(MainActivity.this, privacylist.class));
+//            }
+//        });
 
         getallparking();
     }
@@ -136,5 +139,34 @@ public class MainActivity extends AppCompatActivity implements parkinglistadapte
                 startActivity(i);
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        switch(id) {
+            case R.id.user:
+                Intent i = new Intent(MainActivity.this,userlist.class);
+                startActivity(i);
+                this.finish();
+                break;
+            case R.id.privlist:
+                i = new Intent(MainActivity.this,privacylist.class);
+                startActivity(i);
+                this.finish();
+                break;
+            case R.id.logOut:
+                Toast.makeText(this, "Log out successfull", Toast.LENGTH_SHORT).show();
+                 i = new Intent(MainActivity.this,LoginActivity.class);
+                startActivity(i);
+                this.finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

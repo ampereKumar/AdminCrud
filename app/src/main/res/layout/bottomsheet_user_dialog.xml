@@ -35,15 +35,15 @@
         android:gravity="center"
         android:layout_below="@id/list_contact">
 
-        <Button
-            android:layout_width="8dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="4dp"
-            android:text="Delete"
-            android:backgroundTint="@color/light_orange"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:id="@+id/userdelete"/>
+<!--        <Button-->
+<!--            android:layout_width="8dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_margin="4dp"-->
+<!--            android:text="Delete"-->
+<!--            android:backgroundTint="@color/light_orange"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:id="@+id/userdelete"/>-->
     </LinearLayout>
 </RelativeLayout>

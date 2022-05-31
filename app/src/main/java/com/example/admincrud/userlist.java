@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -97,7 +99,7 @@ public class userlist extends AppCompatActivity implements userlistadapter.UserC
 
         TextView name = layout.findViewById(R.id.list_name);
         TextView contact = layout.findViewById(R.id.list_contact);
-        Button del = layout.findViewById(R.id.userdelete);
+//        Button del = layout.findViewById(R.id.userdelete);
         name.setText("Name: "+userModel.getName());
         contact.setText("Contact: "+userModel.getContact());
 
@@ -113,5 +115,34 @@ public class userlist extends AppCompatActivity implements userlistadapter.UserC
         databaseReference.removeValue();
         Toast.makeText(this, "User is removed", Toast.LENGTH_SHORT).show();
         startActivity(new Intent(userlist.this,MainActivity.class));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        switch(id) {
+            case R.id.user:
+                Intent i = new Intent(userlist.this,userlist.class);
+                startActivity(i);
+                this.finish();
+                break;
+            case R.id.privlist:
+                i = new Intent(userlist.this,privacylist.class);
+                startActivity(i);
+                this.finish();
+                break;
+            case R.id.logOut:
+                Toast.makeText(this, "Log out successfull", Toast.LENGTH_SHORT).show();
+                i = new Intent(userlist.this,LoginActivity.class);
+                startActivity(i);
+                this.finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

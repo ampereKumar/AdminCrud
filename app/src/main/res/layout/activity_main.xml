@@ -37,31 +37,31 @@
         android:layout_margin="20dp"
         app:backgroundTint="@color/black"
         app:tint="@color/white"/>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/ulist"
-        android:backgroundTint="@color/light_orange"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/ic_user"
-        android:layout_marginBottom="90dp"
-        android:layout_marginRight="20dp"
-        app:backgroundTint="@color/black"
-        app:tint="@color/white"/>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/privlist"
-        android:backgroundTint="@color/light_orange"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/ic_privacy"
-        android:layout_marginBottom="160dp"
-        android:layout_marginRight="20dp"
-        app:backgroundTint="@color/black"
-        app:tint="@color/white"/>
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:id="@+id/ulist"-->
+<!--        android:backgroundTint="@color/light_orange"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:src="@drawable/ic_user"-->
+<!--        android:layout_marginBottom="90dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        app:backgroundTint="@color/black"-->
+<!--        app:tint="@color/white"/>-->
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:id="@+id/privlist"-->
+<!--        android:backgroundTint="@color/light_orange"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:src="@drawable/ic_privacy"-->
+<!--        android:layout_marginBottom="160dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        app:backgroundTint="@color/black"-->
+<!--        app:tint="@color/white"/>-->
 
 </RelativeLayout>
